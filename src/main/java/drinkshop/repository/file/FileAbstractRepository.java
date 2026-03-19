@@ -3,19 +3,25 @@ package drinkshop.repository.file;
 import drinkshop.repository.AbstractRepository;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public abstract class FileAbstractRepository<ID, E>
-        extends AbstractRepository<ID, E> {
+public abstract class FileAbstractRepository<I, E>
+        extends AbstractRepository<I, E> {
 
     protected String fileName;
 
-    public FileAbstractRepository(String fileName) {
+    protected FileAbstractRepository(String fileName) {
         this.fileName = fileName;
-        //loadFromFile();
+        loadFromFile();
     }
 
     protected void loadFromFile() {
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        Path path = Path.of(fileName);
+        if (!Files.exists(path)) {
+            return;
+        }
+        try (BufferedReader br = Files.newBufferedReader(path)) {
 
             String line;
             while ((line = br.readLine()) != null) {
@@ -24,12 +30,13 @@ public abstract class FileAbstractRepository<ID, E>
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new UncheckedIOException("Cannot load file " + fileName, e);
         }
     }
 
     private void writeToFile() {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))) {
+        Path path = Path.of(fileName);
+        try (BufferedWriter bw = Files.newBufferedWriter(path)) {
 
             for (E entity : entities.values()) {
                 bw.write(createEntityAsString(entity));
@@ -37,7 +44,7 @@ public abstract class FileAbstractRepository<ID, E>
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new UncheckedIOException("Cannot write file " + fileName, e);
         }
     }
 
@@ -49,7 +56,7 @@ public abstract class FileAbstractRepository<ID, E>
     }
 
     @Override
-    public E delete(ID id) {
+    public E delete(I id) {
         E e = super.delete(id);
         writeToFile();
         return e;

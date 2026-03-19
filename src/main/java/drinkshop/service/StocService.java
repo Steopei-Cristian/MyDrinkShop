@@ -7,6 +7,7 @@ import drinkshop.repository.Repository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StocService {
 
@@ -33,16 +34,15 @@ public class StocService {
     }
 
     public boolean areSuficient(Reteta reteta) {
-        List<IngredientReteta> ingredienteNecesare = reteta.getIngrediente();
+        Map<String, Double> cantitatiDisponibile = stocRepo.findAll().stream()
+                .collect(Collectors.groupingBy(s -> s.getIngredient().toLowerCase(),
+                        Collectors.summingDouble(Stoc::getCantitate)));
 
-        for (IngredientReteta e : ingredienteNecesare) {
-            String ingredient = e.getDenumire();
+        for (IngredientReteta e : reteta.getIngrediente()) {
+            String ingredient = e.getDenumire().toLowerCase();
             double necesar = e.getCantitate();
 
-            double disponibil = stocRepo.findAll().stream()
-                    .filter(s -> s.getIngredient().equalsIgnoreCase(ingredient))
-                    .mapToDouble(Stoc::getCantitate)
-                    .sum();
+            double disponibil = cantitatiDisponibile.getOrDefault(ingredient, 0.0);
 
             if (disponibil < necesar) {
                 return false;
@@ -56,13 +56,14 @@ public class StocService {
             throw new IllegalStateException("Stoc insuficient pentru rețeta.");
         }
 
+        Map<String, List<Stoc>> stocuriIndexate = stocRepo.findAll().stream()
+                .collect(Collectors.groupingBy(s -> s.getIngredient().toLowerCase()));
+
         for (IngredientReteta e : reteta.getIngrediente()) {
-            String ingredient = e.getDenumire();
+            String ingredient = e.getDenumire().toLowerCase();
             double necesar = e.getCantitate();
 
-            List<Stoc> ingredienteStoc = stocRepo.findAll().stream()
-                    .filter(s -> s.getIngredient().equalsIgnoreCase(ingredient))
-                    .toList();
+            List<Stoc> ingredienteStoc = stocuriIndexate.getOrDefault(ingredient, List.of());
 
             double ramas = necesar;
 
@@ -70,7 +71,7 @@ public class StocService {
                 if (ramas <= 0) break;
 
                 double deScazut = Math.min(s.getCantitate(), ramas);
-                s.setCantitate((int)(s.getCantitate() - deScazut));
+                s.setCantitate(s.getCantitate() - deScazut);
                 ramas -= deScazut;
 
                 stocRepo.update(s);

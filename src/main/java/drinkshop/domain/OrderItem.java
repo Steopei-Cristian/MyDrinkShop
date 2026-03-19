@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 public class OrderItem implements Serializable {
 
-    private Product product;
+    private static final long serialVersionUID = 1L;
+    private transient Product product;
     private int quantity;
 
     public OrderItem(Product product, int quantity) {
@@ -37,6 +38,10 @@ public class OrderItem implements Serializable {
     }
 
     public double getTotal() {
-        return product.getPret() * quantity;
+        Product currentProduct = this.product;
+        if (currentProduct == null) {
+            throw new IllegalStateException("Product not loaded for OrderItem");
+        }
+        return currentProduct.getPret() * quantity;
     }
 }

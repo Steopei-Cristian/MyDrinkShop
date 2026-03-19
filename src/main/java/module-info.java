@@ -4,6 +4,7 @@ module drinkshop {
     requires javafx.base;
 
     requires org.controlsfx.controls;
+    requires java.desktop;
 
     opens drinkshop.ui to javafx.fxml;
     exports drinkshop.ui;
