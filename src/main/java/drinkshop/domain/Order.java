@@ -6,14 +6,13 @@ import java.util.List;
 
 public class Order implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private int id;
     private List<OrderItem> items;
     private double totalPrice;
 
     public Order(int id) {
-        this.id = id;
-        this.items = new ArrayList<>();
-        this.totalPrice = 0.0;
+        this(id, new ArrayList<>(), 0.0);
     }
 
     public Order(int id, List<OrderItem> items, double totalPrice) {
@@ -35,7 +34,7 @@ public class Order implements Serializable {
     }
 
     public void setItems(List<OrderItem> items) {
-        this.items = items;
+        this.items = new ArrayList<>(items);
     }
 
     public void setTotalPrice(double totalPrice) {
@@ -60,10 +59,12 @@ public class Order implements Serializable {
     }
 
     public double getTotal() {
-        return totalPrice;
+        return this.getTotalPrice();
     }
 
     public void computeTotalPrice() {
-        this.totalPrice=items.stream().mapToDouble(OrderItem::getTotal).sum();
+        this.totalPrice = items.stream()
+                .mapToDouble(OrderItem::getTotal)
+                .sum();
     }
 }

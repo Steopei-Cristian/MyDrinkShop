@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="drinkshop.domain.ProductTest" time="0.03" tests="10" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop/target/test-classes:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-web/11.0.2/javafx-web-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-swing/11.0.2/javafx-swing-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-media/11.0.2/javafx-media-11.0.2.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RO"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop/target/surefire 2026-03-19T20-11-50_478-jvmRun1 surefire-20260319201151291_1tmp surefire_0-20260319201151291_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop/target/test-classes:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-web/11.0.2/javafx-web-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-swing/11.0.2/javafx-swing-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-media/11.0.2/javafx-media-11.0.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/cristian.steopei"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="jdk.module.path" value="/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop/target/classes:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1-mac-aarch64.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1-mac-aarch64.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1-mac-aarch64.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1-mac-aarch64.jar:/Users/cristian.steopei/.m2/repository/org/controlsfx/controlsfx/11.0.1/controlsfx-11.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-web/11.0.2/javafx-web-11.0.2-mac.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-swing/11.0.2/javafx-swing-11.0.2-mac.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-media/11.0.2/javafx-media-11.0.2-mac.jar"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/25.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-booter/3.5.4/surefire-booter-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-api/3.5.4/surefire-api-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.5.4/surefire-extensions-spi-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.5.4/surefire-shared-utils-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.5.4/surefire-logger-api-3.5.4.jar:/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop/target/test-classes:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-controls/22.0.1/javafx-controls-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.0/junit-jupiter-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-base/22.0.1/javafx-base-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-graphics/22.0.1/javafx-graphics-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-fxml/22.0.1/javafx-fxml-22.0.1.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-web/11.0.2/javafx-web-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-swing/11.0.2/javafx-swing-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/openjfx/javafx-media/11.0.2/javafx-media-11.0.2.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/3.5.4/surefire-junit-platform-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/apache/maven/surefire/common-java5/3.5.4/common-java5-3.5.4.jar:/Users/cristian.steopei/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.2"/>
+    <property name="user.name" value="cristian.steopei"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="26.3.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/cristian.steopei/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/4k/lpfhhv9j4c19mm79qjx1rdrw0000gp/T/"/>
+    <property name="java.version" value="25.0.2"/>
+    <property name="user.dir" value="/Users/cristian.steopei/Desktop/Learning/UBB-CS/ThirdYear/VVSS/MyDrinkShop"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/cristian.steopei/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="25.0.2"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="getTip" classname="drinkshop.domain.ProductTest" time="0.01"/>
+  <testcase name="setCategorie" classname="drinkshop.domain.ProductTest" time="0.001"/>
+  <testcase name="testToString" classname="drinkshop.domain.ProductTest" time="0.003">
+    <system-out><![CDATA[Limonada (JUICE, WATER_BASED) - 10.0 lei
+]]></system-out>
+  </testcase>
+  <testcase name="setTip" classname="drinkshop.domain.ProductTest" time="0.0"/>
+  <testcase name="getNume" classname="drinkshop.domain.ProductTest" time="0.0"/>
+  <testcase name="getPret" classname="drinkshop.domain.ProductTest" time="0.0"/>
+  <testcase name="getId" classname="drinkshop.domain.ProductTest" time="0.0"/>
+  <testcase name="getCategorie" classname="drinkshop.domain.ProductTest" time="0.0"/>
+  <testcase name="setNume" classname="drinkshop.domain.ProductTest" time="0.001"/>
+  <testcase name="setPret" classname="drinkshop.domain.ProductTest" time="0.001"/>
+</testsuite>

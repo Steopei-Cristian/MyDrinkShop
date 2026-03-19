@@ -7,6 +7,7 @@ import drinkshop.reports.DailyReportService;
 import drinkshop.repository.Repository;
 
 import java.util.List;
+import java.util.Objects;
 
 public class DrinkShopService {
 
@@ -31,11 +32,11 @@ public class DrinkShopService {
 
     // ---------- PRODUCT ----------
     public void addProduct(Product p) {
-        productService.addProduct(p);
+        productService.addProduct(Objects.requireNonNull(p, "product must not be null"));
     }
 
     public void updateProduct(int id, String name, double price, CategorieBautura categorie, TipBautura tip) {
-        productService.updateProduct(id, name, price, categorie, tip);
+        productService.updateProduct(id, Objects.requireNonNull(name, "name must not be null"), price, categorie, tip);
     }
 
     public void deleteProduct(int id) {
@@ -56,7 +57,7 @@ public class DrinkShopService {
 
     // ---------- ORDER ----------
     public void addOrder(Order o) {
-        orderService.addOrder(o);
+        orderService.addOrder(Objects.requireNonNull(o, "order must not be null"));
     }
 
     public List<Order> getAllOrders() {
@@ -68,7 +69,7 @@ public class DrinkShopService {
     }
 
     public String generateReceipt(Order o) {
-        return ReceiptGenerator.generate(o, productService.getAllProducts());
+        return ReceiptGenerator.generate(Objects.requireNonNull(o, "order must not be null"), productService.getAllProducts());
     }
 
     public double getDailyRevenue() {
@@ -81,7 +82,12 @@ public class DrinkShopService {
 
     // ---------- STOCK + RECIPE ----------
     public void comandaProdus(Product produs) {
+        Objects.requireNonNull(produs, "produs must not be null");
         Reteta reteta = retetaService.findById(produs.getId());
+
+        if (reteta == null) {
+            throw new IllegalStateException("Nu exista reteta pentru produsul: " + produs.getNume());
+        }
 
         if (!stocService.areSuficient(reteta)) {
             throw new IllegalStateException("Stoc insuficient pentru produsul: " + produs.getNume());
